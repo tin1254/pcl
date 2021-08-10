@@ -41,6 +41,10 @@ PCL_ADD_TEST(filters_crop_hull test_crop_hull
              FILES test_crop_hull.cpp
              LINK_WITH pcl_gtest pcl_filters)
 
+PCL_ADD_TEST(filters_experimental_crop_box test_filters_experimental_crop_box
+             FILES test_experimental_crop_box.cpp
+             LINK_WITH pcl_gtest pcl_common pcl_filters)
+
 if(BUILD_io)
   PCL_ADD_TEST(filters_bilateral test_filters_bilateral
          FILES test_bilateral.cpp
