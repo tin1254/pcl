@@ -135,7 +135,6 @@ checkHashRange3D(const Eigen::Vector4f& min_p,
   else
     return dx * dy * dz;
 }
-
 /**
  * \brief CartesianFilter represents the base class for grid filters.
  * \ingroup filters
@@ -143,12 +142,10 @@ checkHashRange3D(const Eigen::Vector4f& min_p,
 template <template <typename> class FilterBase,
           typename GridStruct,
           typename PointT = GET_POINT_TYPE(GridStruct)>
-class CartesianFilter : public TransformFilter<FilterBase, GridStruct, PointT> {
+class CartesianFilter : public TransformFilter<FilterBase, GridStruct> {
 protected:
-  using PointCloud =
-      typename TransformFilter<FilterBase, GridStruct, PointT>::PointCloud;
+  using PointCloud = typename TransformFilter<FilterBase, GridStruct>::PointCloud;
   using PointCloudPtr = typename PointCloud::Ptr;
-  using PointCloudConstPtr = typename PointCloud::ConstPtr;
 
 public:
   /** \brief Empty constructor. */
